@@ -1,6 +1,8 @@
-# table-filter-legacy
+# table-filter-design-system
 
 Table filter for legacy agency sites
+
+Repository: https://github.com/ntgovernment/table-filter-design-system
 
 ## Overview
 

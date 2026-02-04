@@ -465,6 +465,11 @@ class TableFilter {
 
     const headers = Array.from(thead.querySelectorAll("th"));
 
+    // Check for "Preserve original case" option
+    const columnOptionsAttr =
+      this.filterDiv?.getAttribute("data-column-options") || "";
+    const preserveCase = columnOptionsAttr.includes("Preserve original case");
+
     columnNames.forEach((columnName, index) => {
       // Find the column index by matching header text
       const columnIndex = headers.findIndex(
@@ -484,7 +489,9 @@ class TableFilter {
       const selectId = `selectInput${index + 1}`;
       const label =
         columnName === "Year of finding" ? "Year of issue" : columnName;
-      const placeholder = `Select ${label.toLowerCase()}`;
+      const placeholder = preserveCase
+        ? `Select ${label}`
+        : `Select ${label.toLowerCase()}`;
 
       filterDiv.innerHTML = `
         <label for="${selectId}" class="ntgc-form-input--label">${label}</label>

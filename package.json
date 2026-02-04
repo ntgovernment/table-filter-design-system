@@ -1,7 +1,11 @@
 {
-  "name": "table-filter-legacy",
+  "name": "table-filter-design-system",
   "version": "1.0.0",
   "description": "Table filter for legacy agency sites",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ntgovernment/table-filter-design-system.git"
+  },
   "main": "dist/table-filter.js",
   "scripts": {
     "build": "webpack --mode production",
